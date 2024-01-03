@@ -1,0 +1,8 @@
+<div class="text-center text-success"><%= notice %></div>
+<%= form_for(@post) do |f| %>
+  <div class="text-center">
+    <p><%= f.text_field :title, placeholder: "Title ..." %></p>
+    <p> <%= f.text_area :body, placeholder: "Text ..." %></p>
+    <%= f.submit class: "btn btn-dark" %>
+  </div>
+<% end %>
