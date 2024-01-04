@@ -1,0 +1,31 @@
+<%= form_with(model: host) do |form| %>
+  <% if host.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(host.errors.count, "error") %> prohibited this host from being saved:</h2>
+      <ul>
+        <% host.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_area :body %>
+  </div>
+  <div>
+    <%= form.label :age, style: "display: block" %>
+    <%= form.number_field :age, style: "width: 4rem", min: "1", max: "120" %>
+  </div>
+  <div>
+    <%= form.label :street, style: "display: block" %>
+    <%= form.text_field :street %>
+  </div>
+  <div>
+    <%= form.submit class: "btn btn-dark my-2" %>
+  </div>
+<% end %>
