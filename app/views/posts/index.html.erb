@@ -1,16 +1,18 @@
-<h1  class="text-center"><u>Index Page</u></h1>
-<div class="text-center text-danger"><%= notice %></div>
-<%= link_to "Create a New Post", new_post_path, class: "text-primary d-block my-5 text-center fs-6" %>
-<div class="w-100 m-auto d-flex justify-content-center align-items-center">
-  <ul class="list-unstyled text-left">
-    <% @posts.each do |p|%>
-      <li><label><u>Id:</u></label> <span class="fs-5"><%= p.id %></span></li>
-      <li><label><u>Title:</u></label> <%= p.title %></li>
-      <li><label><u>Body:</u></label> <%= p.body %></li>
-      <li><%= link_to "Show", post_path(p) %></li>
-      <li><%= link_to "Edit", edit_post_path(p) %></li>
-      <li><%= link_to "Delete", post_path(p),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-      <hr class="m-auto my-2" style="box-shadow: 0 5px 5px #000">
-    <% end %>
-  </ul>
-</div>
+<section class="w-100 mx-auto">
+  <h1  class="text-center"><u>Index Page</u></h1>
+  <div class="text-center text-danger"><%= notice %></div>
+  <%= link_to "Create a New Post", new_post_path, class: "text-primary d-block my-5 text-center fs-6" %>
+  <div class="w-100 m-auto d-flex justify-content-center align-items-center">
+    <ul class="list-unstyled text-left">
+      <% @posts.each do |p|%>
+        <li><label><u>Id:</u></label> <span class="fs-5"><%= p.id %></span></li>
+        <li><label><u>Title:</u></label> <%= p.title %></li>
+        <li><label><u>Body:</u></label> <%= p.body %></li>
+        <li><%= link_to "Show", post_path(p) %></li>
+        <li><%= link_to "Edit", edit_post_path(p) %></li>
+        <li><%= link_to "Delete", post_path(p),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+        <hr class="m-auto my-2" style="box-shadow: 0 5px 5px #000">
+      <% end %>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<section class="rounded mx-auto text-left p-3 pb-5 shadow-lg d-flex flex-column justify-content-center align-items-center" style="width: 18rem">
+  <%= form_with(model: cost) do |form| %>
+    <% if cost.errors.any? %>
+      <div" style="color: red">
+        <h2><%= pluralize(cost.errors.count, "error") %> prohibited this cost from being saved:</h2>
+        <ul>
+          <% cost.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div>
+      <%= form.label :title, style: "display: block" %>
+      <%= form.text_field :title %>
+    </div>
+    <div>
+      <%= form.label :body, style: "display: block" %>
+      <%= form.text_area :body %>
+    </div>
+    <div>
+      <%= form.label :age, style: "display: block" %>
+      <%= form.number_field :age %>
+    </div>
+    <div>
+      <%= form.label :fav_color, style: "display: block" %>
+      <%= form.text_field :fav_color %>
+    </div>
+    <div>
+      <%= form.submit class: "mt-3 btn btn-dark w-100" %>
+    </div>
+  <% end %>
+</section>
